@@ -13,8 +13,8 @@
 
     <div class="main">
         <div class="first-menu">
-                
             <button id='pauseBtn' onclick="pausarTempo()">||</button>
+            
         </div>
 
         <div class="labels">
@@ -162,8 +162,16 @@
         <div class="geragame">
             <p>Escolha a dificuldade e clique em gerar jogo.</p>
             <button class='checkGame' onclick="gerarJogoBtn()">Gerar Jogo</button>
+            <br>
+            
+            <textarea name="" id="seed" cols="10" rows="5"></textarea>
+            <button onclick="criarJogoPelaSeed(seed.value)">Gerar pela seed</button>
         </div>
     </div>
+
+    <p id='seedtext' style=' word-break: break-all;'>
+        
+    </p>
 
 
     <script src="jogosprontos.js"></script>
