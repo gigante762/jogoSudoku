@@ -91,6 +91,8 @@ function pausarTempo()
 
 function validarJogo()
 {
+    pausarTempo();
+    
     // pegar todos os dados e jogar pra array
     let arr = [];
 
