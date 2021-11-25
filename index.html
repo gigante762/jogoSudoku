@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Sudoku</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="first-menu">
+                
+            <button id='pauseBtn' onclick="pausarTempo()">||</button>
+        </div>
+
+        <div class="labels">
+            <span>
+                <select name="" id="dificulty">
+                    <option value="50">Fácil</option>
+                    <option value="45">Médio</option>
+                    <option value="42">Difícil</option>
+                    <option value="29">Muito Difícil</option>
+                </select>
+            </span>
+            <span id='timer'>
+                00:00
+            </span>
+            <span>
+                
+            </span>
+        </div>
+
+        <div class="game">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=''>6</td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td class=''></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class='border-bottom'></td>
+                        <td class='border-bottom'></td>
+                        <td class='border-right border-bottom'></td>
+                        <td class='border-bottom'></td>
+                        <td class='border-bottom'></td>
+                        <td class='border-right border-bottom'></td>
+                        <td class='border-bottom'></td>
+                        <td class='border-bottom'></td>
+                        <td class='border-bottom'></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class='border-bottom'></td>
+                        <td class='border-bottom'></td>
+                        <td class='border-right border-bottom'></td>
+                        <td class='border-bottom'></td>
+                        <td class='border-bottom'></td>
+                        <td class='border-right border-bottom'></td>
+                        <td class='border-bottom'></td>
+                        <td class='border-bottom'></td>
+                        <td class='border-bottom'></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td class='border-right'></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+        <div class="buttons">
+            <button class='btnErase'>Apagar</button>
+            <button class='btn'>1</button>
+            <button class='btn'>2</button>
+            <button class='btn'>3</button>
+            <button class='btn'>4</button>
+            <button class='btn'>5</button>
+            <button class='btn'>6</button>
+            <button class='btn'>7</button>
+            <button class='btn'>8</button>
+            <button class='btn'>9</button>
+        </div>
+    </div>
+
+    <div>
+        <button class='checkGame' onclick='validarJogo()'  >Verificar jogo</button>
+
+        <div class="geragame">
+            <p>Escolha a dificuldade e clique em gerar jogo.</p>
+            <button class='checkGame' onclick="gerarJogoBtn()">Gerar Jogo</button>
+        </div>
+    </div>
+
+
+    <script src="jogosprontos.js"></script>
+    <script src="functions.js"></script>
+    <script src="sudoku.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
