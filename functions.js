@@ -14,6 +14,9 @@ function gerarJogo(arrjogo, tds)
     for (let i = 0; i < 81; i++) {
         
         tds[i].classList.remove('wrong');
+        tds[i].classList.remove('selected');
+        tds[i].classList.remove('td-fix');
+        tds[i].classList.remove('td-nofix');
         
     }
     
