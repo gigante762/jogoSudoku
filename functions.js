@@ -17,6 +17,12 @@ function gerarJogo(arrjogo, tds)
         tds[i].classList.remove('selected');
         tds[i].classList.remove('td-fix');
         tds[i].classList.remove('td-nofix');
+        tds[i].removeAttribute('fix')
+
+        tds[i].classList.add('td-nofix');
+        
+        //tds[i].classList.remove('td-nofix');
+
         
     }
     
