@@ -10,7 +10,7 @@ body{
 
 .first-menu{
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: center;
     margin: 10px;
 }
 .first-menu button{
@@ -22,7 +22,7 @@ body{
 
 .labels{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     color: #656566;
 }
 
@@ -97,6 +97,10 @@ tbody tr td {
     padding: 10px;
 }
 
+.checkGame{
+    text-align: center;
+    margin: 20px 0px;
+}
 
 .checkGame:enabled{
     /*your styles*/
@@ -121,6 +125,7 @@ tbody tr td {
 #seedtext{
     word-break: break-all;
     font-size: 12px;
+    margin-top: 30px;
 }
 
 .nsol{

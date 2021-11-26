@@ -13,10 +13,8 @@
 
     <div class="main">
         <div class="first-menu">
-            <button id='pauseBtn' onclick="pausarTempo()">||</button>
-            
+            <button class='checkGame' onclick='validarJogo()'  >Verificar jogo</button>
         </div>
-
         <div class="labels">
             <span>
                 <select name="" id="dificulty">
@@ -29,9 +27,7 @@
             <span id='timer'>
                 00:00
             </span>
-            <span>
-                
-            </span>
+            <button id='pauseBtn' onclick="pausarTempo()">||</button>
         </div>
 
         <div class="game">
@@ -156,7 +152,7 @@
         </div>
 
         <div>
-            <button class='checkGame' onclick='validarJogo()'  >Verificar jogo</button>
+            
     
             <div class="geragame">
                 <p>Escolha a dificuldade e clique em gerar jogo.</p>
@@ -168,7 +164,7 @@
             </div>
         </div>
     </div>
-    
+    <hr>
     <p id='seedtext' >
         
     </p>
