@@ -10,8 +10,8 @@ body{
 
 .first-menu{
     display: flex;
-    justify-content: center;
-    margin: 10px;
+    justify-content: space-around;
+    margin: 5px;
 }
 .first-menu button{
     color: #656566;
@@ -24,6 +24,7 @@ body{
     display: flex;
     justify-content: space-around;
     color: #656566;
+    margin-bottom: 10px;
 }
 
 table {

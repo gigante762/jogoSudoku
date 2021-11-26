@@ -265,82 +265,97 @@ class GameSudoku{
 
     getTAb()
     { 
-        return this.tab;
+      return this.tab;
     }
 
     getSolution()
     { 
-        return this.sol;
+      return this.sol;
     }
 
     generateGame()
     { 
-        let sudoku = new Sudoku( this.hints )
-        sudoku.generate();
-        this.tab  = sudoku.getBoard();
-        this.sol  = sudoku.getSolution();
+      let sudoku = new Sudoku( this.hints )
+      sudoku.generate();
+      this.tab  = sudoku.getBoard();
+      this.sol  = sudoku.getSolution();
 
-        this.generateSeed();
+      this.generateSeed();
     }
 
     generateSeed()
     { 
-        let sol1d = [];
-        for (let j = 0; j < 9; j++) {
-            sol1d.push(  ...this.sol[j] )
-        }
+      let sol1d = [];
+      for (let j = 0; j < 9; j++) {
+          sol1d.push(  ...this.sol[j] )
+      }
 
-        let tab1d = [];
-        for (let j = 0; j < 9; j++) {
-            tab1d.push(  ...this.tab[j] )
-        }
+      let tab1d = [];
+      for (let j = 0; j < 9; j++) {
+          tab1d.push(  ...this.tab[j] )
+      }
 
-        let key = Math.floor((Math.random()*100)) + 10
+      tab1d = tab1d.map((n)=>(n=='') ?0:n);
+     
 
-        let tabsolPlusKey = sol1d.map((n)=>n+key)
-        let tabsolPlusHex = tabsolPlusKey.map((n)=>n.toString(16)).join(',');
+      let key = Math.floor((Math.random()*100)) + 10
 
-        this.seed = `${key.toString(16)}:${tab1d.join('')}:${tabsolPlusHex}`;
+      let tabsolPlusKey = sol1d.map((n)=>n+key)
+      let tabsolPlusHex = tabsolPlusKey.map((n)=>n.toString(16)).join(',');
+
+      this.seed = `${key.toString(16)}:${tab1d.join('')}:${tabsolPlusHex}`;
     }
 
     getSeed()
     { 
-        return this.seed;
+      return this.seed;
     }
 
     generateGameBySeed()
     { 
-        let parts = this.seed.split(':')
-        console.log(parts);
+      let parts = this.seed.split(':')
+      //console.log(parts);
 
-        let key = parseInt(parts[0], 16);
-        console.log(key);
-        
-        let tab = (parts[1].split('')).map((n)=> (parseInt(n, 16) ))
-        console.log(tab);
-        
-        let tabsol = parts[2].split(',').map((n)=> (parseInt(n, 16)-key ))
-        console.log(tabsol);
+      let key = parseInt(parts[0], 16);
+      //console.log(key);
+      
+      let tab = (parts[1].split('')).map((n)=> (parseInt(n, 16) ))
+      //console.log(tab);
+      
+      let tabsol = parts[2].split(',').map((n)=> (parseInt(n, 16)- key ))
+      //console.log(tabsol);
 
-       this.tab = tab;
-       this.sol = tabsol;
+      /* linear to 2d */
+      this.tab = [];
+      this.sol = [];
+      for (let i = 0; i < 9; i++) {
+          let tmp = [];
+          let tmp2 = [];
+          for (let j = 0; j < 9; j++) {
+              tmp.push(Number(tab[i*9+j]))
+              tmp2.push(Number(tabsol[i*9+j]))
+          }
+          this.tab.push(tmp);
+          this.sol.push(tmp2);
+      }
+      
     }
 
     /* Return an Array of objects with the x,y of the wrong positions */
     validateGame(tab2d)
     {
-        let wrongPositions = [];
+      let wrongPositions = [];
 
-        for (let i = 0; i < 9; i++) {
-            for (let j = 0; j < 9; j++) {
-                if(this.sol[i][j] !== tab2d[i][j])
-                { 
-                    wrongPositions.push({x:j,y:i})
-                }
-            }
-        }
+      for (let i = 0; i < 9; i++) {
+          for (let j = 0; j < 9; j++) {
+              if(this.sol[i][j] !== tab2d[i][j])
+              { 
+                  wrongPositions.push({x:j,y:i})
+              }
+          }
+      }
     
-        return wrongPositions
+      return wrongPositions;
     }
     
 

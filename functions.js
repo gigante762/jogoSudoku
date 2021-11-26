@@ -100,12 +100,11 @@ function criarJogoPelaSeed(strseed)
 
     gerarJogo(GAME_SUDOKU.tab, tds);
 
-    document.getElementById('seedtext').innerText = tabseed;
+    document.getElementById('seedtext').innerText = GAME_SUDOKU.getSeed();
     document.querySelector('.geragame').innerHTML = '';
 
     playTempo();
 }
-
 
 function validarJogo()
 {
@@ -134,6 +133,23 @@ function validarJogo()
 
     geragame.innerHTML  = geragamebkp
 
+}
+
+function recomecarJogo()
+{ 
+    clearInterval(timerTimer);
+
+    document.getElementById('seedtext').innerText = GAME_SUDOKU.getSeed();
+    GAME_SUDOKU = new GameSudoku(Number(dificultEle.value), GAME_SUDOKU.getSeed());
+
+    //console.log(GAME_SUDOKU);
+
+    gerarJogo(GAME_SUDOKU.tab, tds);
+
+    document.getElementById('seedtext').innerText = GAME_SUDOKU.getSeed();
+    document.querySelector('.geragame').innerHTML = '';
+
+    playTempo();
 }
 
 
