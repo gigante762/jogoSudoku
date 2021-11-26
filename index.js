@@ -45,8 +45,8 @@ numbersButtons.forEach((e)=>{
 
         if (!lasSelectedTd.getAttribute('fix') && lasSelectedTd.innerText == '')
         {
-            lasSelectedTd.innerText = e.getAttribute('data')
             writeSound.play();
+            lasSelectedTd.innerText = e.getAttribute('data')
             //writeSound.currentTime=0;
             
         }
@@ -60,8 +60,8 @@ document.querySelector('.btnErase').addEventListener('click',()=>{
 
     if (!lasSelectedTd.getAttribute('fix') && !(lasSelectedTd.innerText == '') )
     {
-        lasSelectedTd.innerText = ''
         eraseSound.play();
+        lasSelectedTd.innerText = ''
         //eraseSound.currentTime=0;
     }
 
