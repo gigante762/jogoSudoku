@@ -5,6 +5,7 @@ body{
 .main{
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px auto;
+    max-width: 500px;
 }
 
 .first-menu{
@@ -50,7 +51,7 @@ tbody tr td {
 }
 
 .wrong {
-    background: #ab4545d9;
+    background: #b13a3a94;;
 }
 
 .td-fix {
@@ -84,6 +85,7 @@ tbody tr td {
     margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
+    
 }
 
 .buttons button{
@@ -114,4 +116,15 @@ tbody tr td {
     font-size: 22px;
     border-radius: 10%;
     padding: 10px;
+}
+
+#seedtext{
+    word-break: break-all;
+    font-size: 12px;
+}
+
+.nsol{
+    font-size: 20px;
+    display: inherit;
+    color: chartreuse;
 }

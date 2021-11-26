@@ -154,29 +154,27 @@
             <button class='btn'>8</button>
             <button class='btn'>9</button>
         </div>
-    </div>
 
-    <div>
-        <button class='checkGame' onclick='validarJogo()'  >Verificar jogo</button>
-
-        <div class="geragame">
-            <p>Escolha a dificuldade e clique em gerar jogo.</p>
-            <button class='checkGame' onclick="gerarJogoBtn()">Gerar Jogo</button>
-            <br>
-            
-            <textarea name="" id="seed" cols="10" rows="5"></textarea>
-            <button onclick="criarJogoPelaSeed(seed.value)">Gerar pela seed</button>
+        <div>
+            <button class='checkGame' onclick='validarJogo()'  >Verificar jogo</button>
+    
+            <div class="geragame">
+                <p>Escolha a dificuldade e clique em gerar jogo.</p>
+                <button class='checkGame' onclick="gerarJogoBtn()">Gerar Jogo</button>
+                <br>
+                
+                <textarea name="" id="seed" cols="10" rows="5"></textarea>
+                <button onclick="criarJogoPelaSeed(seed.value)">Gerar pela seed</button>
+            </div>
         </div>
     </div>
-
-    <p id='seedtext' style=' word-break: break-all;'>
+    
+    <p id='seedtext' >
         
     </p>
 
-
-    <script src="jogosprontos.js"></script>
+    <script src="GameSudoku.js"></script>
     <script src="functions.js"></script>
-    <script src="sudoku.js"></script>
     <script src="index.js"></script>
 </body>
 

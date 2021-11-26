@@ -1,23 +1,24 @@
-
-
-var writeSound = new Audio("write.wav");
-var eraseSound = new Audio("erase.wav");
+/* sons */
+let writeSound = new Audio("write.wav");
+let eraseSound = new Audio("erase.wav");
 
 /* Adiconar eventos das tabelas */
 let tds = document.querySelectorAll('td');
-let lasSelectedTd; 
 
-let dificultEle = document.getElementById('dificulty')
-let pauseBtn = document.getElementById('pauseBtn')
+// ultima div selecionada
+let lasSelectedTd;
+
+let dificultEle = document.getElementById('dificulty');
+let pauseBtn = document.getElementById('pauseBtn');
 
 /* variáveis de tempo */
 let segundos = 0;
 let minutos = 0;
 
 let timer = document.getElementById('timer')
-
 let timerTimer;
 
+let geragamebkp = document.querySelector('.geragame').innerHTML;
 
 tds.forEach((e)=>{
 
